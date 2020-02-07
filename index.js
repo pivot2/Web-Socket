@@ -4,7 +4,8 @@ let db = require('./configs/db');
 let Message = require("./model");
 // App setup
 var app = express();
-var server = app.listen(4000, function() {
+let port=process.env.PORT||3000;
+var server = app.listen(port, function() {
   console.log('listening for requests on port 4000');
 });
 
