@@ -2,11 +2,12 @@ var express = require('express');
 var socket = require('socket.io');
 let db = require('./configs/db');
 let Message = require("./model");
+require("dotenv").config();
 // App setup
 var app = express();
 let port=process.env.PORT||3000;
 var server = app.listen(port, function() {
-  console.log('listening for requests on port 4000');
+  console.log('listening for requests on port 3000');
 });
 
 // Static files

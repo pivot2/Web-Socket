@@ -1,5 +1,5 @@
 // Make connection
-var socket = io.connect('http://localhost:4000');
+var socket = io.connect('nxt-007.herokuapp.com');
 
 // Query DOM
 var message = document.getElementById('message'),
@@ -26,5 +26,5 @@ socket.on('show-history',function(chatHistory){
     {
         output.innerHTML += '<p><strong>' + chatHistory[index].username + ': </strong>' + chatHistory[index].message + '</p>';
     }
-    
+
 });
