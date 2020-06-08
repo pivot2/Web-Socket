@@ -1,6 +1,7 @@
 var express = require('express');
 var socket = require('socket.io');
 let db = require('./configs/db');
+let bodyparser=require("body-parser");
 let Message = require("./model");
 require("dotenv").config();
 // App setup
@@ -11,7 +12,10 @@ var server = app.listen(port, function() {
 });
 
 // Static files
-app.use(express.static('public'));
+app.use(bodyparser.json());
+app.use('/chat-board',express.static('public/chat-board'));
+app.use('/login',express.static('public/login'));
+app.use('/signup',express.static('public/signup'));
 // Socket setup & pass server
 var io = socket(server);
 io.on('connection', (socket) => {
@@ -22,8 +26,38 @@ io.on('connection', (socket) => {
   });
   // Handle chat event
   socket.on('chat', function(data) {
-    Message.sendMessage(data.handle,data.message);
+    Message.sendMessage(data.handle,data.message,data.time);
     io.sockets.emit('chat', data);
   });
 
+});
+app.get('/',(req,res)=>
+{
+  res.redirect('/login');
+});
+
+app.post('/signup/api/',(req,res)=>{
+  let {username,password}=req.body;
+  Message.createAccount(username,password).then(function(){
+    res.status(201).send({
+      register:'true'
+    });
+  }).catch(function(err){
+    res.status(400).send(JSON.stringify({
+      register: 'false',
+      message: err.detail
+    }))
+  });
+});
+app.post('/login/api/',(req,res)=>{
+  let {username,password}=req.body;
+  Message.checkAccount(username,password).then(function(user){
+    res.status(200).send(user);
+  })
+  .catch(function(err){
+    res.status(400).send(JSON.stringify({
+      login: 'false',
+      message: err.detail
+    }))
+  });
 });

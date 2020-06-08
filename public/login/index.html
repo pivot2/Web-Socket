@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="wrapper">
+        <div class="form-login">
+            <h2>Đăng nhập</h2>
+            <form class="d-flex flex-column">
+                <div class="name-input">
+                    <input type="text" id="name" required>
+                    <label for="name" id="label-name">Tên đăng nhập</label>
+                </div>
+                <div class="password-input">
+                    <input id="password" type="password" required>
+                    <label for="password" id="label-name">Mật khẩu</label>
+                </div>
+                <div class="checkbox-password">
+                    <input type="checkbox" value="Nhớ mật khẩu">
+                    <p>Nhớ mật khẩu</p>
+                </div>
+                <p id="alert">test?</p>
+                <input id="login-button" type="button" value="Đăng nhập">
+                <p id='p-sign-up'>Chưa có tài khoản? Đăng ký tại <a href="/signup">đây</a></p>
+            </form>
+        </div>
+      </div>
+  </body>
+  <script src="function.js">
+  </script>
+</html>

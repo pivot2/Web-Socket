@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign up form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="signup-form">
+          <h2>Đăng ký</h2>
+          <form class="d-flex flex-column">
+              <div class="name-input">
+                  <input type="text"  id="username" required>
+                  <label for="username" id="label-name">Tên đăng nhập</label>
+              </div>
+              <div class="password-input">
+                  <input type="password" id="password" required>
+                  <label for="password" id="label-name">Mật khẩu</label>
+              </div>
+              <div class="password-input">
+                <input type="password" id="rewrite-password" required>
+                <label for="rewrite-password" id="label-name">Nhập lại mật khẩu</label>
+              </div>
+              <p id="alert">test?</p>
+              <input id="signup-button" type="button" value="Đăng ký">
+          </form>
+      </div>
+    </div>
+  </body>
+  <script src="function.js">
+  </script>
+</html>
