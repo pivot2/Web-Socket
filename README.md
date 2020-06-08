@@ -9,3 +9,8 @@ Một số feature dự định sẽ thêm vào:
 * Show list danh sách người online
 * Tạo phòng chat riêng
 * Cho người dùng gửi ảnh, gif và emote
+***
+Clone Project về, Download các package cần thiết và chạy:   
+```
+node index.js
+```
